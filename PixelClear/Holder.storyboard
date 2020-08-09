@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -10,7 +11,7 @@
         <!--Holder View Controller-->
         <scene sceneID="B3k-fH-3AC">
             <objects>
-                <viewController storyboardIdentifier="holderController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Np8-C0-OTn" customClass="HolderViewController" customModule="ImageTesting" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="holderController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Np8-C0-OTn" customClass="HolderViewController" customModule="PixelClear" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nco-mt-yhs">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -18,7 +19,7 @@
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mNR-bP-GRD">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IMG_7909" translatesAutoresizingMaskIntoConstraints="NO" id="mem-YC-n4R">
+                                    <imageView clipsSubviews="YES" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mem-YC-n4R">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <gestureRecognizers/>
@@ -125,7 +126,7 @@
                         <action selector="rightGesture:" destination="Np8-C0-OTn" id="oIk-rm-JrR"/>
                     </connections>
                 </swipeGestureRecognizer>
-                <customObject id="cri-D5-VV5" customClass="ImageSelection" customModule="ImageTesting" customModuleProvider="target">
+                <customObject id="cri-D5-VV5" customClass="ImageSelection" customModule="PixelClear" customModuleProvider="target">
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="addInteractionOnImageView" value="YES"/>
                     </userDefinedRuntimeAttributes>
@@ -139,7 +140,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="IMG_7909" width="1814" height="2590"/>
         <image name="arrow.clockwise" catalog="system" width="115" height="128"/>
         <image name="camera.fill" catalog="system" width="128" height="96"/>
         <image name="eye" catalog="system" width="128" height="81"/>
