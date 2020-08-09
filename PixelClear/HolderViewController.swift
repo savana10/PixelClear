@@ -133,7 +133,7 @@ public class DisplayView: NSObject {
         #if DEBUG
             return false
         #else
-            guard let path = self.appStoreReceiptURL?.path else {
+        guard let path = Bundle.main.appStoreReceiptURL?.path else {
                 return true
             }
             return !path.contains("sandboxReceipt")
