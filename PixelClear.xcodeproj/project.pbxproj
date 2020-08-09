@@ -10,6 +10,10 @@
 		F24969A324DFE13B000B4584 /* PixelClear.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F249699924DFE13B000B4584 /* PixelClear.framework */; };
 		F24969A824DFE13B000B4584 /* PixelClearTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24969A724DFE13B000B4584 /* PixelClearTests.swift */; };
 		F24969AA24DFE13B000B4584 /* PixelClear.h in Headers */ = {isa = PBXBuildFile; fileRef = F249699C24DFE13B000B4584 /* PixelClear.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F24969C324DFE155000B4584 /* Holder.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F24969BC24DFE155000B4584 /* Holder.storyboard */; };
+		F24969C424DFE155000B4584 /* HolderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24969BD24DFE155000B4584 /* HolderViewController.swift */; };
+		F24969C524DFE155000B4584 /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24969C024DFE155000B4584 /* Bundle+Extension.swift */; };
+		F24969C624DFE155000B4584 /* ImageSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24969C224DFE155000B4584 /* ImageSelection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +33,10 @@
 		F24969A224DFE13B000B4584 /* PixelClearTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PixelClearTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F24969A724DFE13B000B4584 /* PixelClearTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixelClearTests.swift; sourceTree = "<group>"; };
 		F24969A924DFE13B000B4584 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F24969BC24DFE155000B4584 /* Holder.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Holder.storyboard; sourceTree = "<group>"; };
+		F24969BD24DFE155000B4584 /* HolderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HolderViewController.swift; sourceTree = "<group>"; };
+		F24969C024DFE155000B4584 /* Bundle+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
+		F24969C224DFE155000B4584 /* ImageSelection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageSelection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +80,9 @@
 			isa = PBXGroup;
 			children = (
 				F249699C24DFE13B000B4584 /* PixelClear.h */,
+				F24969BE24DFE155000B4584 /* Custom */,
+				F24969BC24DFE155000B4584 /* Holder.storyboard */,
+				F24969BD24DFE155000B4584 /* HolderViewController.swift */,
 				F249699D24DFE13B000B4584 /* Info.plist */,
 			);
 			path = PixelClear;
@@ -84,6 +95,31 @@
 				F24969A924DFE13B000B4584 /* Info.plist */,
 			);
 			path = PixelClearTests;
+			sourceTree = "<group>";
+		};
+		F24969BE24DFE155000B4584 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				F24969BF24DFE155000B4584 /* Extension */,
+				F24969C124DFE155000B4584 /* Image Selection */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
+		F24969BF24DFE155000B4584 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				F24969C024DFE155000B4584 /* Bundle+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		F24969C124DFE155000B4584 /* Image Selection */ = {
+			isa = PBXGroup;
+			children = (
+				F24969C224DFE155000B4584 /* ImageSelection.swift */,
+			);
+			path = "Image Selection";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +184,7 @@
 				TargetAttributes = {
 					F249699824DFE13B000B4584 = {
 						CreatedOnToolsVersion = 11.6;
+						LastSwiftMigration = 1160;
 					};
 					F24969A124DFE13B000B4584 = {
 						CreatedOnToolsVersion = 11.6;
@@ -178,6 +215,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F24969C324DFE155000B4584 /* Holder.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,6 +233,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F24969C624DFE155000B4584 /* ImageSelection.swift in Sources */,
+				F24969C424DFE155000B4584 /* HolderViewController.swift in Sources */,
+				F24969C524DFE155000B4584 /* Bundle+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +381,7 @@
 		F24969AE24DFE13B000B4584 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = H7L95BP537;
@@ -356,6 +398,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.savana.PixelClear;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -364,6 +407,7 @@
 		F24969AF24DFE13B000B4584 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = H7L95BP537;
@@ -388,6 +432,7 @@
 		F24969B124DFE13B000B4584 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H7L95BP537;
 				INFOPLIST_FILE = PixelClearTests/Info.plist;
@@ -406,6 +451,7 @@
 		F24969B224DFE13B000B4584 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H7L95BP537;
 				INFOPLIST_FILE = PixelClearTests/Info.plist;
