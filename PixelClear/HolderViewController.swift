@@ -109,7 +109,7 @@ public class DisplayView: NSObject {
     
     
     public func display() {
-        if !Bundle.main.displayView() {
+        if !self.displayView() {
             DispatchQueue.main.asyncAfter(deadline: .now()+1.0) {
                 guard let primaryWindow = UIApplication.shared.windows.first else { return }
                 primaryWindow.translatesAutoresizingMaskIntoConstraints = true
@@ -129,5 +129,14 @@ public class DisplayView: NSObject {
         }
     }
     
-    
+    fileprivate func displayView() -> Bool {
+        #if DEBUG
+            return false
+        #else
+            guard let path = self.appStoreReceiptURL?.path else {
+                return true
+            }
+            return !path.contains("sandboxReceipt")
+        #endif
+    }
 }

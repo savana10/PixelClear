@@ -6,17 +6,3 @@
 //  Copyright © 2020 savana kranth. All rights reserved.
 //
 
-import Foundation
-
-extension Bundle {
-    func displayView() -> Bool {
-        #if DEBUG
-            return false
-        #else
-            guard let path = self.appStoreReceiptURL?.path else {
-                return true
-            }
-            return !path.contains("sandboxReceipt")
-        #endif
-    }
-}
