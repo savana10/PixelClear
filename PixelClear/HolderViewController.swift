@@ -109,7 +109,7 @@ public class DisplayView: NSObject {
     
     
     public func display() {
-        if !Bundle.main.isProduction {
+        if !Bundle.main.displayView() {
             DispatchQueue.main.asyncAfter(deadline: .now()+1.0) {
                 guard let primaryWindow = UIApplication.shared.windows.first else { return }
                 primaryWindow.translatesAutoresizingMaskIntoConstraints = true

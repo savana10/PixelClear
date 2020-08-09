@@ -9,7 +9,7 @@
 import Foundation
 
 extension Bundle {
-    var isProduction : Bool {
+    func displayView() -> Bool {
         #if DEBUG
             return false
         #else
