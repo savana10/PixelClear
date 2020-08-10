@@ -11,6 +11,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = "11.0"
   s.source       = { :git => "https://github.com/savana10/PixelClear.git", :tag => "master" }
   s.ios.source_files  = "PixelClear/"
+  s.ios.resources     = "PixelClear/*.{xib,storyboard}"
   s.ios.frameworks  = ["Foundation", "UIKit", "Photos"]
   s.swift_version = "5.0"
 end
