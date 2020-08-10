@@ -18,13 +18,13 @@ class ImageSelection: NSObject {
 
     @IBOutlet var selectedImageView: UIImageView!
     @IBOutlet var displayController: UIViewController!
-    @IBInspectable var addInteractionOnImageView: Bool = false {
-        didSet{
-            if addInteractionOnImageView && selectedImageView != nil {
-                addTapGesture()
-            }
-        }
-    }
+//    @IBInspectable var addInteractionOnImageView: Bool = false {
+//        didSet{
+//            if addInteractionOnImageView && selectedImageView != nil {
+//                addTapGesture()
+//            }
+//        }
+//    }
     @IBInspectable var showImageOptions: Bool = false
     
     private lazy var imagePicker: UIImagePickerController = {
