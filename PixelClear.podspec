@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   s.author             = { "Savana Kranth" => "savanakranth@gmail.com" }
   s.ios.deployment_target = "11.0"
   s.source       = { :git => "https://github.com/savana10/PixelClear.git", :tag => "master" }
-  s.ios.source_files  = "PixelClear/"
+  s.ios.source_files  = "PixelClear/" , "PixelClear/Custom/**/*.swift"
   s.ios.resources     = "PixelClear/*.{xib,storyboard}"
   s.ios.frameworks  = ["Foundation", "UIKit", "Photos"]
   s.swift_version = "5.0"
