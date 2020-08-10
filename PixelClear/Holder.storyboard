@@ -127,9 +127,6 @@
                     </connections>
                 </swipeGestureRecognizer>
                 <customObject id="cri-D5-VV5" customClass="ImageSelection" customModule="PixelClear" customModuleProvider="target">
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="addInteractionOnImageView" value="YES"/>
-                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="displayController" destination="Np8-C0-OTn" id="qCA-Xa-tGV"/>
                         <outlet property="selectedImageView" destination="mem-YC-n4R" id="IGq-uN-aT0"/>
