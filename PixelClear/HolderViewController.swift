@@ -22,13 +22,33 @@ class HolderViewController: UIViewController {
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var bottomConstant: NSLayoutConstraint!
     @IBOutlet weak var imageHolderView: UIView!
+    @IBOutlet var imagePicker: ImageSelection!
+    @IBOutlet weak var bottomHolderView: UIView!
     var mySelf: HolderViewController?
-
+    fileprivate var displayBorder = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        imageHolderView.layer.borderWidth = 2
-        imageHolderView.layer.borderColor = UIColor.lightGray.cgColor
+        applyBorderToImage(true)
+        if let parent = self.parent {
+            imagePicker.displayController = parent
+        } else if let rootController = UIApplication.shared.windows.first?.rootViewController {
+            imagePicker.displayController = rootController
+        }
+        
+        imagePicker.imageSelected = { selected in
+            if self.backgroundImage.isHidden && selected {
+                self.displayImage()
+            }
+            
+        }
+        
 
+    }
+    
+    func applyBorderToImage(_ border:Bool = false)  {
+        imageHolderView.layer.borderWidth = border ? 2 : 0
+        imageHolderView.layer.borderColor = UIColor.lightGray.cgColor
     }
     
     func reloadDisplay() {
@@ -45,7 +65,7 @@ class HolderViewController: UIViewController {
         mySelf?.view.layoutIfNeeded()
     }
     
-    @IBAction func displayImage(_ sender: UIButton) {
+    fileprivate func displayImage() {
         mySelf?.holderState = (holderState == .regularDisplay) ? .imageDisplay : .regularDisplay
         mySelf?.reloadDisplay()
     }
@@ -97,7 +117,27 @@ class HolderViewController: UIViewController {
         mySelf?.reloadDisplay()
     }
     
+    @IBAction func updateBorder(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
+        displayBorder = !displayBorder
+        applyBorderToImage(sender.isSelected)
+    }
     
+    @IBAction func hideBottomHolderView(_ sender: Any) {
+         toggleBottomViewDisplay()
+        DispatchQueue.main.asyncAfter(deadline: .now()+5) {
+            self.mySelf?.toggleBottomViewDisplay()
+        }
+    }
+    
+    fileprivate func toggleBottomViewDisplay() {
+        mySelf?.bottomHolderView.isHidden = !(mySelf?.bottomHolderView.isHidden ?? false)
+        if mySelf?.backgroundImage.isHidden ?? true &&  mySelf?.bottomHolderView.isHidden ?? true {
+            mySelf?.applyBorderToImage(false)
+        } else {
+            mySelf?.applyBorderToImage(mySelf?.displayBorder ?? true)
+        }
+    }
 }
 
 

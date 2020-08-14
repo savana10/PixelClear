@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "PixelClear"
-  s.version      = "0.0.2"
+  s.version      = "0.0.3"
   s.summary      = "Framework to make pixel perfect apps"
   s.description  = <<-DESC
     Framework to make pixel perfect apps useful mostly for developing.
@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = "11.0"
   s.source       = { :git => "https://github.com/savana10/PixelClear.git", :tag => "master" }
   s.ios.source_files  = "PixelClear/" , "PixelClear/Custom/**/*.swift"
-  s.ios.resources     = "PixelClear/*.{xib,storyboard}"
+  s.ios.resources     = "PixelClear/*.{xib,storyboard}" , "PixelClear/**/*.png"
   s.ios.frameworks  = ["Foundation", "UIKit", "Photos"]
   s.swift_version = "5.0"
 end

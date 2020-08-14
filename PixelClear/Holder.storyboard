@@ -19,7 +19,7 @@
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mNR-bP-GRD">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mem-YC-n4R">
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mem-YC-n4R">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <gestureRecognizers/>
@@ -53,16 +53,15 @@
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="60"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cmh-gy-fQu">
-                                                <rect key="frame" x="0.0" y="0.0" width="111.5" height="60"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="67" height="60"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" image="camera.fill" catalog="system"/>
                                                 <connections>
-                                                    <action selector="displayImage:" destination="Np8-C0-OTn" eventType="touchUpInside" id="zWd-W3-IkJ"/>
                                                     <action selector="displayImagePickerOptions" destination="cri-D5-VV5" eventType="touchUpInside" id="lNy-0F-ma4"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wwR-ti-3Kc">
-                                                <rect key="frame" x="111.5" y="0.0" width="111" height="60"/>
+                                                <rect key="frame" x="67" y="0.0" width="66.5" height="60"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" image="eye" catalog="system"/>
                                                 <connections>
@@ -70,11 +69,28 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vjF-4y-mTO">
-                                                <rect key="frame" x="222.5" y="0.0" width="111.5" height="60"/>
+                                                <rect key="frame" x="133.5" y="0.0" width="67" height="60"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" image="eye.fill" catalog="system"/>
                                                 <connections>
                                                     <action selector="brightnessUpdate:" destination="Np8-C0-OTn" eventType="touchUpInside" id="ent-qF-hZ7"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zik-S2-vmM">
+                                                <rect key="frame" x="200.5" y="0.0" width="66.5" height="60"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" image="ic_no_border.png"/>
+                                                <state key="selected" image="ic_border.png"/>
+                                                <connections>
+                                                    <action selector="updateBorder:" destination="Np8-C0-OTn" eventType="touchUpInside" id="mrB-mV-3RB"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I3Y-KD-59E">
+                                                <rect key="frame" x="267" y="0.0" width="67" height="60"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" image="timer" catalog="system"/>
+                                                <connections>
+                                                    <action selector="hideBottomHolderView:" destination="Np8-C0-OTn" eventType="touchUpInside" id="KqK-D4-SC6"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -112,7 +128,9 @@
                         <outlet property="backgroundImage" destination="mem-YC-n4R" id="UT4-en-QEY"/>
                         <outlet property="backgroundImageLeading" destination="tJF-v4-Hyt" id="4Kw-ON-grY"/>
                         <outlet property="bottomConstant" destination="lkA-2C-Aqo" id="fW5-9b-uOb"/>
+                        <outlet property="bottomHolderView" destination="TQj-R6-iDn" id="pRG-yV-HmQ"/>
                         <outlet property="imageHolderView" destination="mNR-bP-GRD" id="1ZV-Sb-zUI"/>
+                        <outlet property="imagePicker" destination="cri-D5-VV5" id="fPG-Pe-OMk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qKp-qC-3Ey" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -128,7 +146,6 @@
                 </swipeGestureRecognizer>
                 <customObject id="cri-D5-VV5" customClass="ImageSelection" customModule="PixelClear" customModuleProvider="target">
                     <connections>
-                        <outlet property="displayController" destination="Np8-C0-OTn" id="qCA-Xa-tGV"/>
                         <outlet property="selectedImageView" destination="mem-YC-n4R" id="IGq-uN-aT0"/>
                     </connections>
                 </customObject>
@@ -141,5 +158,8 @@
         <image name="camera.fill" catalog="system" width="128" height="96"/>
         <image name="eye" catalog="system" width="128" height="81"/>
         <image name="eye.fill" catalog="system" width="128" height="78"/>
+        <image name="ic_border.png" width="32" height="32"/>
+        <image name="ic_no_border.png" width="32" height="32"/>
+        <image name="timer" catalog="system" width="128" height="121"/>
     </resources>
 </document>
