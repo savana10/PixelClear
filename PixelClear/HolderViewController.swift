@@ -23,8 +23,10 @@ class HolderViewController: UIViewController {
     @IBOutlet weak var bottomConstant: NSLayoutConstraint!
     @IBOutlet weak var imageHolderView: UIView!
     @IBOutlet var imagePicker: ImageSelection!
+    @IBOutlet weak var bottomHolderView: UIView!
     var mySelf: HolderViewController?
-
+    fileprivate var displayBorder = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         applyBorderToImage(true)
@@ -35,7 +37,7 @@ class HolderViewController: UIViewController {
         }
         
         imagePicker.imageSelected = { selected in
-            if self.backgroundImage.isHidden {
+            if self.backgroundImage.isHidden && selected {
                 self.displayImage()
             }
             
@@ -117,9 +119,25 @@ class HolderViewController: UIViewController {
     
     @IBAction func updateBorder(_ sender: UIButton) {
         sender.isSelected = !sender.isSelected
+        displayBorder = !displayBorder
         applyBorderToImage(sender.isSelected)
     }
     
+    @IBAction func hideBottomHolderView(_ sender: Any) {
+         toggleBottomViewDisplay()
+        DispatchQueue.main.asyncAfter(deadline: .now()+5) {
+            self.mySelf?.toggleBottomViewDisplay()
+        }
+    }
+    
+    fileprivate func toggleBottomViewDisplay() {
+        mySelf?.bottomHolderView.isHidden = !(mySelf?.bottomHolderView.isHidden ?? false)
+        if mySelf?.backgroundImage.isHidden ?? true &&  mySelf?.bottomHolderView.isHidden ?? true {
+            mySelf?.applyBorderToImage(false)
+        } else {
+            mySelf?.applyBorderToImage(mySelf?.displayBorder ?? true)
+        }
+    }
 }
 
 
