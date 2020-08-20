@@ -24,8 +24,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <gestureRecognizers/>
                                         <connections>
-                                            <outletCollection property="gestureRecognizers" destination="rIq-Tm-ABE" appends="YES" id="Vtk-kl-QpK"/>
-                                            <outletCollection property="gestureRecognizers" destination="9Ks-cT-eI3" appends="YES" id="TJ4-l2-aIb"/>
+                                            <outletCollection property="gestureRecognizers" destination="ndS-59-waK" appends="YES" id="f49-iF-3gJ"/>
                                         </connections>
                                     </imageView>
                                 </subviews>
@@ -134,21 +133,16 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qKp-qC-3Ey" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="right" id="rIq-Tm-ABE">
-                    <connections>
-                        <action selector="leftGesture:" destination="Np8-C0-OTn" id="cMD-Ra-bpU"/>
-                    </connections>
-                </swipeGestureRecognizer>
-                <swipeGestureRecognizer direction="left" id="9Ks-cT-eI3">
-                    <connections>
-                        <action selector="rightGesture:" destination="Np8-C0-OTn" id="oIk-rm-JrR"/>
-                    </connections>
-                </swipeGestureRecognizer>
                 <customObject id="cri-D5-VV5" customClass="ImageSelection" customModule="PixelClear" customModuleProvider="target">
                     <connections>
                         <outlet property="selectedImageView" destination="mem-YC-n4R" id="IGq-uN-aT0"/>
                     </connections>
                 </customObject>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="ndS-59-waK">
+                    <connections>
+                        <action selector="userSwipe:" destination="Np8-C0-OTn" id="LKS-z6-zWr"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="857.97101449275374" y="129.91071428571428"/>
         </scene>
