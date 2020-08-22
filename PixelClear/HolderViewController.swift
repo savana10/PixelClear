@@ -17,13 +17,18 @@ enum DisplayState {
 class HolderViewController: UIViewController {
     
     fileprivate var holderState: DisplayState = .regularDisplay
-    @IBOutlet weak var backgrounImageTrailing: NSLayoutConstraint!
-    @IBOutlet weak var backgroundImageLeading: NSLayoutConstraint!
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var bottomConstant: NSLayoutConstraint!
-    @IBOutlet weak var imageHolderView: UIView!
     @IBOutlet var imagePicker: ImageSelection!
     @IBOutlet weak var bottomHolderView: UIView!
+    @IBOutlet weak var holdersHeight: NSLayoutConstraint!
+    
+    
+    @IBOutlet private weak var parentView: UIView!
+    @IBOutlet private weak var overlayView: UIView!
+    @IBOutlet private weak var leftHandleView: UIVisualEffectView!
+    @IBOutlet private weak var rightHandleView: UIVisualEffectView!
+    
     
     var mySelf: HolderViewController?
     
@@ -34,8 +39,14 @@ class HolderViewController: UIViewController {
                return UIScreen.main.bounds.width
            }
     }
+    private var handleWidth: CGFloat {
+        get {
+            return rightHandleView.bounds.width
+        }
+    }
     
-    fileprivate var moveLeft = true
+    private var maskLayer = CAShapeLayer()
+    
     private let edgeOffset: CGFloat = 30
 
     
@@ -59,8 +70,8 @@ class HolderViewController: UIViewController {
     }
     
     func applyBorderToImage(_ border:Bool = false)  {
-        imageHolderView.layer.borderWidth = border ? 2 : 0
-        imageHolderView.layer.borderColor = UIColor.lightGray.cgColor
+        parentView.layer.borderWidth = border ? 2 : 0
+        parentView.layer.borderColor = UIColor.lightGray.cgColor
     }
     
     func reloadDisplay() {
@@ -91,8 +102,8 @@ class HolderViewController: UIViewController {
     }
         
     fileprivate func resetImageConstants()  {
-        mySelf?.backgrounImageTrailing.constant = 0
-        mySelf?.backgroundImageLeading.constant = 0
+//        mySelf?.backgrounImageTrailing.constant = 0
+//        mySelf?.backgroundImageLeading.constant = 0
     }
     
     @IBAction func refreshToDefault(_ sender: Any) {
@@ -108,37 +119,68 @@ class HolderViewController: UIViewController {
         applyBorderToImage(sender.isSelected)
     }
     
-    @IBAction func hideBottomHolderView(_ sender: Any) {
-         toggleBottomViewDisplay()
-        DispatchQueue.main.asyncAfter(deadline: .now()+5) {
-            self.mySelf?.toggleBottomViewDisplay()
-        }
-    }
     
     @IBAction func userSwipe(_ gesture: UIPanGestureRecognizer) {
+        
         let translation = gesture.translation(in: view)
-
-        if gesture.state == .ended || gesture.state == .cancelled,
-            -translation.x < maxWidth - edgeOffset {
-            if moveLeft {
-                self.backgroundImageLeading.constant = self.backgroundImageLeading.constant-translation.x > 0 ? self.backgroundImageLeading.constant-translation.x : 0
-            } else {
-                if self.backgrounImageTrailing.constant+translation.x < -maxWidth || self.backgrounImageTrailing.constant+translation.x > 0 {
-                    self.backgrounImageTrailing.constant = self.backgrounImageTrailing.constant+translation.x
-                } else {
-                    self.backgrounImageTrailing.constant = 0
-                }
-            }
+        
+        guard let gestureView = gesture.view else {
+            return
+        }
+        
+        // Right limit for mask
+        var x = gestureView.center.x + translation.x
+        if x < 0 { x = 0 }
+        if x < leftHandleView.center.x { x = leftHandleView.center.x }
+        if x > maxWidth { x = maxWidth }
+        let y = gestureView.center.y
+        
+        // Update view position
+        gestureView.center = CGPoint(x: x, y: y)
+        
+        // Mask
+        var bounds = parentView.bounds
+        bounds.origin.x = leftHandleView.center.x
+        bounds.size.width = x - leftHandleView.center.x
+        
+        let path = UIBezierPath(rect: bounds)
+        maskLayer.path = path.cgPath
+        overlayView.layer.mask = maskLayer
+        
+        gesture.setTranslation(.zero, in: view)
+        
+        // End event
+        if gesture.state == .ended || gesture.state == .cancelled {
+            let leftEdge: CGFloat = edgeOffset
+            let rightEdge: CGFloat = maxWidth - edgeOffset
+            
+            // If at the extreme edge, update the mask with animation
+            if x < leftEdge { x = 0 }
+            if x > rightEdge { x = maxWidth }
+            
+            UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseOut, animations: {
+                gestureView.center = CGPoint(x: x, y: y)
+                bounds.origin.x = self.leftHandleView.center.x
+                bounds.size.width = x - self.leftHandleView.center.x
+                
+                let path = UIBezierPath(rect: bounds)
+                self.maskLayer.path = path.cgPath
+                self.overlayView.layer.mask = self.maskLayer
+            })
         }
         
     }
     
     fileprivate func toggleBottomViewDisplay() {
-        mySelf?.bottomHolderView.isHidden = !(mySelf?.bottomHolderView.isHidden ?? false)
-        if mySelf?.backgroundImage.isHidden ?? true &&  mySelf?.bottomHolderView.isHidden ?? true {
-            mySelf?.applyBorderToImage(false)
-        } else {
-            mySelf?.applyBorderToImage(mySelf?.displayBorder ?? true)
+        mySelf?.holdersHeight.constant = mySelf?.holdersHeight.constant == 60 ? 0 : 60
+        UIView.animate(withDuration: 0.5) {
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    @IBAction func toggleOptionsDisplayStatus(_ sender: UITapGestureRecognizer) {
+        UIView.animate(withDuration: 0.5) {
+            self.toggleBottomViewDisplay()
         }
     }
     
