@@ -47,15 +47,20 @@
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PAA-Zz-SQf">
                                                     <rect key="frame" x="8" y="8" width="64" height="64"/>
                                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <gestureRecognizers/>
                                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="12"/>
                                                 </imageView>
                                             </subviews>
+                                            <gestureRecognizers/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="PAA-Zz-SQf" secondAttribute="trailing" constant="8" id="aqe-4Z-hFZ"/>
                                                 <constraint firstItem="PAA-Zz-SQf" firstAttribute="leading" secondItem="kvm-NH-DDe" secondAttribute="leading" constant="8" id="gKm-dr-D5U"/>
                                                 <constraint firstAttribute="bottom" secondItem="PAA-Zz-SQf" secondAttribute="bottom" constant="8" id="ova-VJ-QAz"/>
                                                 <constraint firstItem="PAA-Zz-SQf" firstAttribute="top" secondItem="kvm-NH-DDe" secondAttribute="top" constant="8" id="rp0-cf-ppB"/>
                                             </constraints>
+                                            <connections>
+                                                <outletCollection property="gestureRecognizers" destination="Imt-kK-5DJ" appends="YES" id="Gbj-Vj-hvz"/>
+                                            </connections>
                                         </view>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="aRf-vp-aof"/>
@@ -191,6 +196,8 @@
                         <outlet property="imagePicker" destination="cri-D5-VV5" id="fPG-Pe-OMk"/>
                         <outlet property="leftHandleView" destination="coP-03-pGD" id="N6J-gD-IaI"/>
                         <outlet property="overlayView" destination="3cT-MB-A3J" id="BCS-Cb-1Us"/>
+                        <outlet property="parentLeadingConstant" destination="iJb-X3-VWH" id="4gU-ii-vUT"/>
+                        <outlet property="parentTrailingConstant" destination="L4T-90-mnQ" id="cQJ-Xh-Y9o"/>
                         <outlet property="parentView" destination="3Gh-n2-2CS" id="DzO-fO-vLK"/>
                         <outlet property="rightHandleView" destination="2Po-Nc-nao" id="cyF-BJ-Pbo"/>
                     </connections>
@@ -211,6 +218,11 @@
                         <action selector="toggleOptionsDisplayStatus:" destination="Np8-C0-OTn" id="wur-iF-vSr"/>
                     </connections>
                 </tapGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="Imt-kK-5DJ">
+                    <connections>
+                        <action selector="userSwipeRight:" destination="Np8-C0-OTn" id="XMS-hb-rGD"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="857.97101449275374" y="129.91071428571428"/>
         </scene>

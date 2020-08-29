@@ -29,10 +29,15 @@ class HolderViewController: UIViewController {
     @IBOutlet private weak var leftHandleView: UIVisualEffectView!
     @IBOutlet private weak var rightHandleView: UIVisualEffectView!
     
+    @IBOutlet weak var parentTrailingConstant: NSLayoutConstraint!
+    
+    @IBOutlet weak var parentLeadingConstant: NSLayoutConstraint!
     
     var mySelf: HolderViewController?
     
     fileprivate var displayBorder = true
+    
+    fileprivate var addConstantValue = false
     
     private var maxWidth: CGFloat {
            get {
@@ -48,6 +53,8 @@ class HolderViewController: UIViewController {
     private var maskLayer = CAShapeLayer()
     
     private let edgeOffset: CGFloat = 30
+    
+    private var leftInitalValue: CGFloat = 0
 
     
     override func viewDidLoad() {
@@ -122,12 +129,14 @@ class HolderViewController: UIViewController {
     
     @IBAction func userSwipe(_ gesture: UIPanGestureRecognizer) {
         
-        let translation = gesture.translation(in: view)
+        let translation = gesture.translation(in: rightHandleView)
         
         guard let gestureView = gesture.view else {
             return
         }
-        
+        print(translation.x)
+        parentTrailingConstant.constant = translation.x
+        return;
         // Right limit for mask
         var x = gestureView.center.x + translation.x
         if x < 0 { x = 0 }
@@ -147,7 +156,7 @@ class HolderViewController: UIViewController {
         maskLayer.path = path.cgPath
         overlayView.layer.mask = maskLayer
         
-        gesture.setTranslation(.zero, in: view)
+//        gesture.setTranslation(.zero, in: view)
         
         // End event
         if gesture.state == .ended || gesture.state == .cancelled {
@@ -170,6 +179,25 @@ class HolderViewController: UIViewController {
         }
         
     }
+    
+    @IBAction func userSwipeRight(_ gesture: UIPanGestureRecognizer) {
+        let translation = gesture.translation(in: view)
+        
+        guard let _ = gesture.view else {
+            return
+        }
+        print(leftInitalValue.advanced(by: translation.x))
+        parentLeadingConstant.constant = leftInitalValue.advanced(by: translation.x)
+        if parentLeadingConstant.constant < 0  {
+           parentLeadingConstant.constant = 0
+        }
+        if gesture.state == .ended || gesture.state == .cancelled || gesture.state == .began {
+        //            gesture.setTranslation(translation, in: gestureView)
+                    leftInitalValue = UIScreen.main.bounds.size.width-parentView.frame.size.width
+        }
+    }
+    
+    
     
     fileprivate func toggleBottomViewDisplay() {
         mySelf?.holdersHeight.constant = mySelf?.holdersHeight.constant == 60 ? 0 : 60
