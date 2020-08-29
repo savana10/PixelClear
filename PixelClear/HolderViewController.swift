@@ -24,6 +24,9 @@ class HolderViewController: UIViewController {
     @IBOutlet weak var imageHolderView: UIView!
     @IBOutlet var imagePicker: ImageSelection!
     @IBOutlet weak var bottomHolderView: UIView!
+    @IBOutlet weak var bottomHolderConstant: NSLayoutConstraint!
+    @IBOutlet weak var leftHandleView: UIVisualEffectView!
+    @IBOutlet weak var rightHandleView: UIVisualEffectView!
     
     var mySelf: HolderViewController?
     
@@ -45,6 +48,8 @@ class HolderViewController: UIViewController {
         imagePicker.imageSelected = { selected in
             if self.backgroundImage.isHidden && selected {
                 self.displayImage()
+                self.leftHandleView.isHidden = false
+                self.rightHandleView.isHidden = false
             }
             
         }
@@ -89,6 +94,8 @@ class HolderViewController: UIViewController {
     fileprivate func resetImageConstants()  {
         mySelf?.backgrounImageTrailing.constant = 0
         mySelf?.backgroundImageLeading.constant = 0
+        self.leftHandleView.isHidden = true
+        self.rightHandleView.isHidden = true
     }
     
     @IBAction func refreshToDefault(_ sender: Any) {
@@ -153,6 +160,15 @@ class HolderViewController: UIViewController {
             mySelf?.applyBorderToImage(mySelf?.displayBorder ?? true)
         }
     }
+    
+    @IBAction func hideBottomHolder(_ sender: Any) {
+        bottomHolderConstant.constant =  (bottomHolderConstant.constant == 60) ? 0 : 60
+        UIView.animate(withDuration: 0.25) {
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    
 }
 
 
