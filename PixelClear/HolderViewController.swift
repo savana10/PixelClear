@@ -24,8 +24,14 @@ class HolderViewController: UIViewController {
     @IBOutlet weak var imageHolderView: UIView!
     @IBOutlet var imagePicker: ImageSelection!
     @IBOutlet weak var bottomHolderView: UIView!
+    
     var mySelf: HolderViewController?
+    
     fileprivate var displayBorder = true
+    
+    private var leftInitalValue: CGFloat = 0
+    private var rightInitalValue: CGFloat = 0
+    private let minWidth: CGFloat = 60
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,38 +84,13 @@ class HolderViewController: UIViewController {
         }
     }
     
-    @IBAction func leftGesture(_ sender: UISwipeGestureRecognizer) {
-        if mySelf?.backgroundImageLeading.constant != 0 {
-            mySelf?.resetImageConstants()
-            return;
-        }
-        if (mySelf?.backgrounImageTrailing.constant ?? 0) < 3*(UIScreen.main.bounds.width/4) {
-            mySelf?.backgrounImageTrailing.constant += UIScreen.main.bounds.width/4
-        }
-        mySelf?.backgroundImageLeading.constant = 0
-        UIView.animate(withDuration: 0.25) {
-            self.mySelf?.view.layoutIfNeeded()
-        }
-    }
     
-    @IBAction func rightGesture(_ sender: UISwipeGestureRecognizer) {
-        if mySelf?.backgrounImageTrailing.constant != 0 {
-            mySelf?.resetImageConstants()
-            return;
-        }
-     if (mySelf?.backgroundImageLeading.constant ?? 0) < 3*UIScreen.main.bounds.width/4 {
-            mySelf?.backgroundImageLeading.constant += UIScreen.main.bounds.width/4
-        }
-        mySelf?.backgrounImageTrailing.constant = 0
-        UIView.animate(withDuration: 0.25) {
-            self.mySelf?.view.layoutIfNeeded()
-        }
-    }
     
     fileprivate func resetImageConstants()  {
         mySelf?.backgrounImageTrailing.constant = 0
         mySelf?.backgroundImageLeading.constant = 0
     }
+    
     @IBAction func refreshToDefault(_ sender: Any) {
         mySelf?.holderState = .regularDisplay
         mySelf?.resetImageConstants()
@@ -129,6 +110,40 @@ class HolderViewController: UIViewController {
             self.mySelf?.toggleBottomViewDisplay()
         }
     }
+    
+    @IBAction func panFromLeftToRight(_ gesture: UIPanGestureRecognizer) {
+        let translation = gesture.translation(in: view)
+        
+        guard let _ = gesture.view else {
+            return
+        }
+       
+        backgrounImageTrailing.constant = leftInitalValue.advanced(by: translation.x)
+        if backgrounImageTrailing.constant < 0  {
+           backgrounImageTrailing.constant = 0
+        }
+        if gesture.state == .ended || gesture.state == .cancelled || gesture.state == .began {
+            leftInitalValue = backgrounImageTrailing.constant
+        }
+
+    }
+    
+    @IBAction func panFromRightToLeft(_ gesture: UIPanGestureRecognizer) {
+        let translation = gesture.translation(in: view)
+        
+        guard let _ = gesture.view else {
+            return
+        }
+        backgroundImageLeading.constant = rightInitalValue.advanced(by: translation.x * -1)
+        if backgroundImageLeading.constant < 0  {
+            backgroundImageLeading.constant = 0
+        }
+        if gesture.state == .ended || gesture.state == .cancelled || gesture.state == .began {
+            rightInitalValue = backgroundImageLeading.constant
+        }
+        
+    }
+    
     
     fileprivate func toggleBottomViewDisplay() {
         mySelf?.bottomHolderView.isHidden = !(mySelf?.bottomHolderView.isHidden ?? false)

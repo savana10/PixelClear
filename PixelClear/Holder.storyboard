@@ -23,10 +23,6 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <gestureRecognizers/>
-                                        <connections>
-                                            <outletCollection property="gestureRecognizers" destination="rIq-Tm-ABE" appends="YES" id="Vtk-kl-QpK"/>
-                                            <outletCollection property="gestureRecognizers" destination="9Ks-cT-eI3" appends="YES" id="TJ4-l2-aIb"/>
-                                        </connections>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -35,6 +31,38 @@
                                     <constraint firstItem="mem-YC-n4R" firstAttribute="top" secondItem="mNR-bP-GRD" secondAttribute="top" id="h5x-Oy-dQF"/>
                                 </constraints>
                             </view>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9jX-wb-Cy7">
+                                <rect key="frame" x="-40" y="328" width="80" height="80"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="LrT-uw-D61">
+                                    <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <gestureRecognizers/>
+                                    <connections>
+                                        <outletCollection property="gestureRecognizers" destination="h1M-hk-Kz9" appends="YES" id="RhF-4f-t0Z"/>
+                                    </connections>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="8t0-Ys-qUW"/>
+                                    <constraint firstAttribute="height" constant="80" id="lFa-oN-aAJ"/>
+                                </constraints>
+                                <blurEffect style="regular"/>
+                            </visualEffectView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="COc-x8-b48">
+                                <rect key="frame" x="374" y="408" width="80" height="80"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="TNw-Tw-dgJ">
+                                    <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <gestureRecognizers/>
+                                    <connections>
+                                        <outletCollection property="gestureRecognizers" destination="l0f-0j-KJA" appends="YES" id="gis-ft-O87"/>
+                                    </connections>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="XXk-8K-hxk"/>
+                                    <constraint firstAttribute="height" constant="80" id="zKw-cJ-tSB"/>
+                                </constraints>
+                                <blurEffect style="regular"/>
+                            </visualEffectView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TQj-R6-iDn">
                                 <rect key="frame" x="10" y="802" width="394" height="60"/>
                                 <subviews>
@@ -114,12 +142,16 @@
                             <constraint firstItem="Cb7-NR-d4B" firstAttribute="trailing" secondItem="TQj-R6-iDn" secondAttribute="trailing" constant="10" id="1dz-hC-lUc"/>
                             <constraint firstItem="mNR-bP-GRD" firstAttribute="leading" secondItem="Cb7-NR-d4B" secondAttribute="leading" id="8U4-vF-mQW"/>
                             <constraint firstAttribute="bottom" secondItem="mNR-bP-GRD" secondAttribute="bottom" id="PL0-pE-xKh"/>
+                            <constraint firstItem="9jX-wb-Cy7" firstAttribute="centerY" secondItem="nco-mt-yhs" secondAttribute="centerY" constant="-80" id="X2v-UD-pf7"/>
                             <constraint firstItem="mNR-bP-GRD" firstAttribute="top" secondItem="nco-mt-yhs" secondAttribute="top" id="cJg-Ps-gAt"/>
                             <constraint firstAttribute="bottom" secondItem="TQj-R6-iDn" secondAttribute="bottom" constant="34" id="lkA-2C-Aqo"/>
+                            <constraint firstItem="COc-x8-b48" firstAttribute="centerY" secondItem="nco-mt-yhs" secondAttribute="centerY" id="od2-Ku-sx8"/>
                             <constraint firstItem="mem-YC-n4R" firstAttribute="leading" secondItem="Cb7-NR-d4B" secondAttribute="leading" id="qg4-IU-Sdb"/>
+                            <constraint firstItem="COc-x8-b48" firstAttribute="trailing" secondItem="mNR-bP-GRD" secondAttribute="trailing" constant="40" id="saU-O5-hxB"/>
                             <constraint firstItem="mem-YC-n4R" firstAttribute="trailing" secondItem="Cb7-NR-d4B" secondAttribute="trailing" id="srE-iy-tVF"/>
                             <constraint firstAttribute="trailing" secondItem="mNR-bP-GRD" secondAttribute="trailing" id="tJF-v4-Hyt"/>
                             <constraint firstItem="TQj-R6-iDn" firstAttribute="leading" secondItem="Cb7-NR-d4B" secondAttribute="leading" constant="10" id="vXQ-cM-ncc"/>
+                            <constraint firstItem="9jX-wb-Cy7" firstAttribute="leading" secondItem="mNR-bP-GRD" secondAttribute="leading" constant="-40" id="y1M-eA-SAG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Cb7-NR-d4B"/>
                     </view>
@@ -134,21 +166,21 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qKp-qC-3Ey" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="right" id="rIq-Tm-ABE">
-                    <connections>
-                        <action selector="leftGesture:" destination="Np8-C0-OTn" id="cMD-Ra-bpU"/>
-                    </connections>
-                </swipeGestureRecognizer>
-                <swipeGestureRecognizer direction="left" id="9Ks-cT-eI3">
-                    <connections>
-                        <action selector="rightGesture:" destination="Np8-C0-OTn" id="oIk-rm-JrR"/>
-                    </connections>
-                </swipeGestureRecognizer>
                 <customObject id="cri-D5-VV5" customClass="ImageSelection" customModule="PixelClear" customModuleProvider="target">
                     <connections>
                         <outlet property="selectedImageView" destination="mem-YC-n4R" id="IGq-uN-aT0"/>
                     </connections>
                 </customObject>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="h1M-hk-Kz9">
+                    <connections>
+                        <action selector="panFromLeftToRight:" destination="Np8-C0-OTn" id="7En-KQ-l9m"/>
+                    </connections>
+                </panGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="l0f-0j-KJA">
+                    <connections>
+                        <action selector="panFromRightToLeft:" destination="Np8-C0-OTn" id="rXL-Dv-Gy4"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="857.97101449275374" y="129.91071428571428"/>
         </scene>
