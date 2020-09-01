@@ -51,10 +51,9 @@ class HolderViewController: UIViewController {
                 self.leftHandleView.isHidden = false
                 self.rightHandleView.isHidden = false
             }
-            
         }
-        
-
+        rightHandleView.pc_makeViewRounded(halfCircle: true)
+        leftHandleView.pc_makeViewRounded(halfCircle: true)
     }
     
     func applyBorderToImage(_ border:Bool = false)  {
@@ -90,7 +89,6 @@ class HolderViewController: UIViewController {
     }
     
     
-    
     fileprivate func resetImageConstants()  {
         mySelf?.backgrounImageTrailing.constant = 0
         mySelf?.backgroundImageLeading.constant = 0
@@ -111,12 +109,6 @@ class HolderViewController: UIViewController {
         applyBorderToImage(sender.isSelected)
     }
     
-    @IBAction func hideBottomHolderView(_ sender: Any) {
-         toggleBottomViewDisplay()
-        DispatchQueue.main.asyncAfter(deadline: .now()+5) {
-            self.mySelf?.toggleBottomViewDisplay()
-        }
-    }
     
     @IBAction func panFromLeftToRight(_ gesture: UIPanGestureRecognizer) {
         let translation = gesture.translation(in: view)
@@ -180,7 +172,7 @@ public class DisplayView: NSObject {
     
     
     public func display() {
-        if !self.displayView() {
+        if self.displayView() {
             DispatchQueue.main.asyncAfter(deadline: .now()+1.0) {
                 guard let primaryWindow = UIApplication.shared.windows.first else { return }
                 primaryWindow.translatesAutoresizingMaskIntoConstraints = true
@@ -201,13 +193,6 @@ public class DisplayView: NSObject {
     }
     
     fileprivate func displayView() -> Bool {
-        #if DEBUG
-            return false
-        #else
-        guard let path = Bundle.main.appStoreReceiptURL?.path else {
-                return true
-            }
-            return !path.contains("sandboxReceipt")
-        #endif
+        return !Bundle.main.isProduction
     }
 }

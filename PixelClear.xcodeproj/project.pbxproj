@@ -14,6 +14,7 @@
 		F24969C424DFE155000B4584 /* HolderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24969BD24DFE155000B4584 /* HolderViewController.swift */; };
 		F24969C524DFE155000B4584 /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24969C024DFE155000B4584 /* Bundle+Extension.swift */; };
 		F24969C624DFE155000B4584 /* ImageSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24969C224DFE155000B4584 /* ImageSelection.swift */; };
+		F285E76924FE737E00C50832 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F285E76824FE737E00C50832 /* UIView+Extensions.swift */; };
 		F2C4C74624E6E16000946237 /* ic_no_border.png in Resources */ = {isa = PBXBuildFile; fileRef = F2C4C74524E6E16000946237 /* ic_no_border.png */; };
 		F2C4C74924E6E18F00946237 /* ic_border.png in Resources */ = {isa = PBXBuildFile; fileRef = F2C4C74824E6E18F00946237 /* ic_border.png */; };
 /* End PBXBuildFile section */
@@ -39,6 +40,7 @@
 		F24969BD24DFE155000B4584 /* HolderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HolderViewController.swift; sourceTree = "<group>"; };
 		F24969C024DFE155000B4584 /* Bundle+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
 		F24969C224DFE155000B4584 /* ImageSelection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageSelection.swift; sourceTree = "<group>"; };
+		F285E76824FE737E00C50832 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		F2C4C74524E6E16000946237 /* ic_no_border.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_no_border.png; sourceTree = "<group>"; };
 		F2C4C74824E6E18F00946237 /* ic_border.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_border.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -115,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				F24969C024DFE155000B4584 /* Bundle+Extension.swift */,
+				F285E76824FE737E00C50832 /* UIView+Extensions.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 			files = (
 				F24969C624DFE155000B4584 /* ImageSelection.swift in Sources */,
 				F24969C424DFE155000B4584 /* HolderViewController.swift in Sources */,
+				F285E76924FE737E00C50832 /* UIView+Extensions.swift in Sources */,
 				F24969C524DFE155000B4584 /* Bundle+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
