@@ -24,8 +24,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <gestureRecognizers/>
                                         <connections>
-                                            <outletCollection property="gestureRecognizers" destination="rIq-Tm-ABE" appends="YES" id="Vtk-kl-QpK"/>
-                                            <outletCollection property="gestureRecognizers" destination="9Ks-cT-eI3" appends="YES" id="TJ4-l2-aIb"/>
+                                            <outletCollection property="gestureRecognizers" destination="ouY-eE-wyH" appends="YES" id="9pP-oG-UpM"/>
                                         </connections>
                                     </imageView>
                                 </subviews>
@@ -35,6 +34,38 @@
                                     <constraint firstItem="mem-YC-n4R" firstAttribute="top" secondItem="mNR-bP-GRD" secondAttribute="top" id="h5x-Oy-dQF"/>
                                 </constraints>
                             </view>
+                            <visualEffectView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9jX-wb-Cy7">
+                                <rect key="frame" x="-40" y="328" width="80" height="80"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="LrT-uw-D61">
+                                    <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <gestureRecognizers/>
+                                    <connections>
+                                        <outletCollection property="gestureRecognizers" destination="h1M-hk-Kz9" appends="YES" id="RhF-4f-t0Z"/>
+                                    </connections>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="8t0-Ys-qUW"/>
+                                    <constraint firstAttribute="height" constant="80" id="lFa-oN-aAJ"/>
+                                </constraints>
+                                <blurEffect style="regular"/>
+                            </visualEffectView>
+                            <visualEffectView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="COc-x8-b48">
+                                <rect key="frame" x="374" y="408" width="80" height="80"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="TNw-Tw-dgJ">
+                                    <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <gestureRecognizers/>
+                                    <connections>
+                                        <outletCollection property="gestureRecognizers" destination="l0f-0j-KJA" appends="YES" id="gis-ft-O87"/>
+                                    </connections>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="XXk-8K-hxk"/>
+                                    <constraint firstAttribute="height" constant="80" id="zKw-cJ-tSB"/>
+                                </constraints>
+                                <blurEffect style="regular"/>
+                            </visualEffectView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TQj-R6-iDn">
                                 <rect key="frame" x="10" y="802" width="394" height="60"/>
                                 <subviews>
@@ -53,7 +84,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="60"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cmh-gy-fQu">
-                                                <rect key="frame" x="0.0" y="0.0" width="67" height="60"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="83.5" height="60"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" image="camera.fill" catalog="system"/>
                                                 <connections>
@@ -61,7 +92,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wwR-ti-3Kc">
-                                                <rect key="frame" x="67" y="0.0" width="66.5" height="60"/>
+                                                <rect key="frame" x="83.5" y="0.0" width="83.5" height="60"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" image="eye" catalog="system"/>
                                                 <connections>
@@ -69,7 +100,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vjF-4y-mTO">
-                                                <rect key="frame" x="133.5" y="0.0" width="67" height="60"/>
+                                                <rect key="frame" x="167" y="0.0" width="83.5" height="60"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" image="eye.fill" catalog="system"/>
                                                 <connections>
@@ -77,20 +108,12 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zik-S2-vmM">
-                                                <rect key="frame" x="200.5" y="0.0" width="66.5" height="60"/>
+                                                <rect key="frame" x="250.5" y="0.0" width="83.5" height="60"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" image="ic_no_border.png"/>
                                                 <state key="selected" image="ic_border.png"/>
                                                 <connections>
                                                     <action selector="updateBorder:" destination="Np8-C0-OTn" eventType="touchUpInside" id="mrB-mV-3RB"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I3Y-KD-59E">
-                                                <rect key="frame" x="267" y="0.0" width="67" height="60"/>
-                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" image="timer" catalog="system"/>
-                                                <connections>
-                                                    <action selector="hideBottomHolderView:" destination="Np8-C0-OTn" eventType="touchUpInside" id="KqK-D4-SC6"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -114,12 +137,16 @@
                             <constraint firstItem="Cb7-NR-d4B" firstAttribute="trailing" secondItem="TQj-R6-iDn" secondAttribute="trailing" constant="10" id="1dz-hC-lUc"/>
                             <constraint firstItem="mNR-bP-GRD" firstAttribute="leading" secondItem="Cb7-NR-d4B" secondAttribute="leading" id="8U4-vF-mQW"/>
                             <constraint firstAttribute="bottom" secondItem="mNR-bP-GRD" secondAttribute="bottom" id="PL0-pE-xKh"/>
+                            <constraint firstItem="9jX-wb-Cy7" firstAttribute="centerY" secondItem="nco-mt-yhs" secondAttribute="centerY" constant="-80" id="X2v-UD-pf7"/>
                             <constraint firstItem="mNR-bP-GRD" firstAttribute="top" secondItem="nco-mt-yhs" secondAttribute="top" id="cJg-Ps-gAt"/>
                             <constraint firstAttribute="bottom" secondItem="TQj-R6-iDn" secondAttribute="bottom" constant="34" id="lkA-2C-Aqo"/>
+                            <constraint firstItem="COc-x8-b48" firstAttribute="centerY" secondItem="nco-mt-yhs" secondAttribute="centerY" id="od2-Ku-sx8"/>
                             <constraint firstItem="mem-YC-n4R" firstAttribute="leading" secondItem="Cb7-NR-d4B" secondAttribute="leading" id="qg4-IU-Sdb"/>
+                            <constraint firstItem="COc-x8-b48" firstAttribute="trailing" secondItem="mNR-bP-GRD" secondAttribute="trailing" constant="40" id="saU-O5-hxB"/>
                             <constraint firstItem="mem-YC-n4R" firstAttribute="trailing" secondItem="Cb7-NR-d4B" secondAttribute="trailing" id="srE-iy-tVF"/>
                             <constraint firstAttribute="trailing" secondItem="mNR-bP-GRD" secondAttribute="trailing" id="tJF-v4-Hyt"/>
                             <constraint firstItem="TQj-R6-iDn" firstAttribute="leading" secondItem="Cb7-NR-d4B" secondAttribute="leading" constant="10" id="vXQ-cM-ncc"/>
+                            <constraint firstItem="9jX-wb-Cy7" firstAttribute="leading" secondItem="mNR-bP-GRD" secondAttribute="leading" constant="-40" id="y1M-eA-SAG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Cb7-NR-d4B"/>
                     </view>
@@ -128,27 +155,35 @@
                         <outlet property="backgroundImage" destination="mem-YC-n4R" id="UT4-en-QEY"/>
                         <outlet property="backgroundImageLeading" destination="tJF-v4-Hyt" id="4Kw-ON-grY"/>
                         <outlet property="bottomConstant" destination="lkA-2C-Aqo" id="fW5-9b-uOb"/>
+                        <outlet property="bottomHolderConstant" destination="Ahs-Tk-zw2" id="2bw-C8-znH"/>
                         <outlet property="bottomHolderView" destination="TQj-R6-iDn" id="pRG-yV-HmQ"/>
                         <outlet property="imageHolderView" destination="mNR-bP-GRD" id="1ZV-Sb-zUI"/>
                         <outlet property="imagePicker" destination="cri-D5-VV5" id="fPG-Pe-OMk"/>
+                        <outlet property="leftHandleView" destination="9jX-wb-Cy7" id="Jbt-b9-dMy"/>
+                        <outlet property="rightHandleView" destination="COc-x8-b48" id="aa7-0C-Rlf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qKp-qC-3Ey" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="right" id="rIq-Tm-ABE">
-                    <connections>
-                        <action selector="leftGesture:" destination="Np8-C0-OTn" id="cMD-Ra-bpU"/>
-                    </connections>
-                </swipeGestureRecognizer>
-                <swipeGestureRecognizer direction="left" id="9Ks-cT-eI3">
-                    <connections>
-                        <action selector="rightGesture:" destination="Np8-C0-OTn" id="oIk-rm-JrR"/>
-                    </connections>
-                </swipeGestureRecognizer>
                 <customObject id="cri-D5-VV5" customClass="ImageSelection" customModule="PixelClear" customModuleProvider="target">
                     <connections>
                         <outlet property="selectedImageView" destination="mem-YC-n4R" id="IGq-uN-aT0"/>
                     </connections>
                 </customObject>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="h1M-hk-Kz9">
+                    <connections>
+                        <action selector="panFromLeftToRight:" destination="Np8-C0-OTn" id="7En-KQ-l9m"/>
+                    </connections>
+                </panGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="l0f-0j-KJA">
+                    <connections>
+                        <action selector="panFromRightToLeft:" destination="Np8-C0-OTn" id="rXL-Dv-Gy4"/>
+                    </connections>
+                </panGestureRecognizer>
+                <tapGestureRecognizer id="ouY-eE-wyH">
+                    <connections>
+                        <action selector="hideBottomHolder:" destination="Np8-C0-OTn" id="eUR-Kw-fXy"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="857.97101449275374" y="129.91071428571428"/>
         </scene>
@@ -160,6 +195,5 @@
         <image name="eye.fill" catalog="system" width="128" height="78"/>
         <image name="ic_border.png" width="32" height="32"/>
         <image name="ic_no_border.png" width="32" height="32"/>
-        <image name="timer" catalog="system" width="128" height="121"/>
     </resources>
 </document>
