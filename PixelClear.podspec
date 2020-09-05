@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "PixelClear"
-  s.version      = "0.0.5"
+  s.version      = "0.0.6"
   s.summary      = "Framework to make pixel perfect apps"
   s.description  = <<-DESC
     Framework to make pixel perfect apps useful mostly for developing.
