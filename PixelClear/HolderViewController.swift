@@ -27,6 +27,8 @@ class HolderViewController: UIViewController {
     @IBOutlet weak var bottomHolderConstant: NSLayoutConstraint!
     @IBOutlet weak var leftHandleView: UIVisualEffectView!
     @IBOutlet weak var rightHandleView: UIVisualEffectView!
+    @IBOutlet weak var rightHandleWidth: NSLayoutConstraint!
+    @IBOutlet weak var leftHandleWidth: NSLayoutConstraint!
     
     var mySelf: HolderViewController?
     
@@ -35,6 +37,9 @@ class HolderViewController: UIViewController {
     private var leftInitalValue: CGFloat = 0
     private var rightInitalValue: CGFloat = 0
     private let minWidth: CGFloat = 60
+    private let minAlpha: CGFloat = 0.25
+    private let maxAlpha: CGFloat = 1.0
+    private var bottomValue: CGFloat = 20
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,7 +76,7 @@ class HolderViewController: UIViewController {
         let origin = (holderState == .regularDisplay) ? CGPoint(x: 0, y: UIScreen.main.bounds.height-80) : .zero
         mySelf?.view.frame = CGRect(origin: origin, size: CGSize(width: window.frame.size.width, height: (holderState == .regularDisplay) ? 60 :UIScreen.main.bounds.height))
         mySelf?.backgroundImage.isHidden = (holderState == .regularDisplay)
-        mySelf?.bottomConstant.constant = (holderState == .regularDisplay)  ? .zero : 20  //34
+        mySelf?.bottomConstant.constant = (holderState == .regularDisplay)  ? .zero : bottomValue  //34
         mySelf?.view.layoutIfNeeded()
     }
     
@@ -116,12 +121,14 @@ class HolderViewController: UIViewController {
         guard let _ = gesture.view else {
             return
         }
-       
         backgrounImageTrailing.constant = leftInitalValue.advanced(by: translation.x)
         if backgrounImageTrailing.constant < 0  {
            backgrounImageTrailing.constant = 0
         }
+        
+        leftHandleView.alpha = maxAlpha
         if gesture.state == .ended || gesture.state == .cancelled || gesture.state == .began {
+            leftHandleView.alpha = minAlpha
             leftInitalValue = backgrounImageTrailing.constant
         }
 
@@ -137,7 +144,9 @@ class HolderViewController: UIViewController {
         if backgroundImageLeading.constant < 0  {
             backgroundImageLeading.constant = 0
         }
+        rightHandleView.alpha = maxAlpha
         if gesture.state == .ended || gesture.state == .cancelled || gesture.state == .began {
+            rightHandleView.alpha = minAlpha
             rightInitalValue = backgroundImageLeading.constant
         }
         
@@ -155,9 +164,39 @@ class HolderViewController: UIViewController {
     
     @IBAction func hideBottomHolder(_ sender: Any) {
         bottomHolderConstant.constant =  (bottomHolderConstant.constant == 60) ? 0 : 60
+        rightHandleWidth.constant = (rightHandleWidth.constant == 80 ) ? 0 : 80
+        leftHandleWidth.constant = (leftHandleWidth.constant == 80 ) ? 0 : 80
         UIView.animate(withDuration: 0.25) {
             self.view.layoutIfNeeded()
         }
+    }
+    
+    
+    @IBAction func moveBottomView(_ gesture: UIPanGestureRecognizer) {
+        let translation = gesture.translation(in: view)
+        guard let _ = gesture.view else {
+            return
+        }
+        bottomConstant.constant = bottomValue.advanced(by: -translation.y)
+        if bottomConstant.constant < 20  {
+            bottomConstant.constant = 20
+        }
+        
+        if bottomConstant.constant > UIScreen.main.bounds.size.height - 100  {
+            bottomConstant.constant = UIScreen.main.bounds.size.height - 100
+        }
+
+        if gesture.state == .ended || gesture.state == .cancelled || gesture.state == .began {
+            if gesture.state == .ended || gesture.state == .cancelled {
+                let midPoint = UIScreen.main.bounds.height/2
+                if bottomConstant.constant <=  midPoint+120  && bottomConstant.constant >= midPoint-80 {
+                    bottomConstant.constant = bottomConstant.constant >= midPoint ? midPoint+120 : midPoint - 100
+                }
+                
+            }
+            bottomValue = bottomConstant.constant
+        }
+        
     }
     
     
