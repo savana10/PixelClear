@@ -73,10 +73,11 @@ class HolderViewController: UIViewController {
         }
         window.clipsToBounds = true
         window.translatesAutoresizingMaskIntoConstraints = true
-        let origin = (holderState == .regularDisplay) ? CGPoint(x: 0, y: UIScreen.main.bounds.height-80) : .zero
+        let origin = (holderState == .regularDisplay) ? CGPoint(x: 0, y: UIScreen.main.bounds.height-(60+bottomValue)) : .zero
         mySelf?.view.frame = CGRect(origin: origin, size: CGSize(width: window.frame.size.width, height: (holderState == .regularDisplay) ? 60 :UIScreen.main.bounds.height))
         mySelf?.backgroundImage.isHidden = (holderState == .regularDisplay)
-        mySelf?.bottomConstant.constant = (holderState == .regularDisplay)  ? .zero : bottomValue  //34
+        mySelf?.bottomConstant.constant = (holderState == .regularDisplay)  ? .zero : bottomValue
+        applyBorderToImage(holderState != .regularDisplay)
         mySelf?.view.layoutIfNeeded()
     }
     
@@ -173,6 +174,9 @@ class HolderViewController: UIViewController {
     
     
     @IBAction func moveBottomView(_ gesture: UIPanGestureRecognizer) {
+        if (holderState == .regularDisplay) {
+            return;
+        }
         let translation = gesture.translation(in: view)
         guard let _ = gesture.view else {
             return
