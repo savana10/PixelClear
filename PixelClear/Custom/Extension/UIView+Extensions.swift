@@ -10,7 +10,7 @@ import UIKit
 
 extension UIView {
     
-    func pc_makeViewRounded(_ customRadius: CGFloat = 5,halfCircle circular: Bool = false) {
+    func pc_makeViewRounded(_ customRadius: CGFloat = 5, circular: Bool = false) {
         var radius = customRadius
         if circular,
             bounds.size.width == bounds.size.height {

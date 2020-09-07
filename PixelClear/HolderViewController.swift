@@ -57,8 +57,8 @@ class HolderViewController: UIViewController {
                 self.rightHandleView.isHidden = false
             }
         }
-        rightHandleView.pc_makeViewRounded(halfCircle: true)
-        leftHandleView.pc_makeViewRounded(halfCircle: true)
+        rightHandleView.pc_makeViewRounded(circular: true)
+        leftHandleView.pc_makeViewRounded(circular: true)
     }
     
     func applyBorderToImage(_ border:Bool = false)  {
