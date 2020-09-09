@@ -12,6 +12,7 @@
 		F2484D7725091DF8002B1F78 /* ic_eye_fill.png in Resources */ = {isa = PBXBuildFile; fileRef = F2484D7625091DF8002B1F78 /* ic_eye_fill.png */; };
 		F2484D7925091E2C002B1F78 /* ic_eye.png in Resources */ = {isa = PBXBuildFile; fileRef = F2484D7825091E2C002B1F78 /* ic_eye.png */; };
 		F2484D7B25091EE0002B1F78 /* ic_reset.png in Resources */ = {isa = PBXBuildFile; fileRef = F2484D7A25091EE0002B1F78 /* ic_reset.png */; };
+		F2484D7D25092895002B1F78 /* ic_camera.png in Resources */ = {isa = PBXBuildFile; fileRef = F2484D7C25092895002B1F78 /* ic_camera.png */; };
 		F24969A324DFE13B000B4584 /* PixelClear.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F249699924DFE13B000B4584 /* PixelClear.framework */; };
 		F24969A824DFE13B000B4584 /* PixelClearTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24969A724DFE13B000B4584 /* PixelClearTests.swift */; };
 		F24969AA24DFE13B000B4584 /* PixelClear.h in Headers */ = {isa = PBXBuildFile; fileRef = F249699C24DFE13B000B4584 /* PixelClear.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -39,6 +40,7 @@
 		F2484D7625091DF8002B1F78 /* ic_eye_fill.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_eye_fill.png; sourceTree = "<group>"; };
 		F2484D7825091E2C002B1F78 /* ic_eye.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_eye.png; sourceTree = "<group>"; };
 		F2484D7A25091EE0002B1F78 /* ic_reset.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_reset.png; sourceTree = "<group>"; };
+		F2484D7C25092895002B1F78 /* ic_camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_camera.png; sourceTree = "<group>"; };
 		F249699924DFE13B000B4584 /* PixelClear.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PixelClear.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F249699C24DFE13B000B4584 /* PixelClear.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PixelClear.h; sourceTree = "<group>"; };
 		F249699D24DFE13B000B4584 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 		F2C4C74724E6E18200946237 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				F2484D7C25092895002B1F78 /* ic_camera.png */,
 				F2484D7A25091EE0002B1F78 /* ic_reset.png */,
 				F2484D7225091769002B1F78 /* ic_border.png */,
 				F2484D7825091E2C002B1F78 /* ic_eye.png */,
@@ -247,6 +250,7 @@
 				F24969C324DFE155000B4584 /* Holder.storyboard in Resources */,
 				F2484D7325091769002B1F78 /* ic_border.png in Resources */,
 				F2484D7B25091EE0002B1F78 /* ic_reset.png in Resources */,
+				F2484D7D25092895002B1F78 /* ic_camera.png in Resources */,
 				F2484D7525091794002B1F78 /* ic_no_border.png in Resources */,
 				F285E77524FF277700C50832 /* ic_double_arrow.png in Resources */,
 				F2484D7925091E2C002B1F78 /* ic_eye.png in Resources */,

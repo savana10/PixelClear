@@ -111,7 +111,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cmh-gy-fQu">
                                                 <rect key="frame" x="0.0" y="0.0" width="83.5" height="60"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" image="camera.fill" catalog="system"/>
+                                                <state key="normal" image="ic_camera.png"/>
                                                 <connections>
                                                     <action selector="displayImagePickerOptions" destination="cri-D5-VV5" eventType="touchUpInside" id="lNy-0F-ma4"/>
                                                 </connections>
@@ -224,8 +224,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="camera.fill" catalog="system" width="128" height="96"/>
         <image name="ic_border.png" width="32" height="32"/>
+        <image name="ic_camera.png" width="32" height="32"/>
         <image name="ic_double_arrow.png" width="80" height="80"/>
         <image name="ic_eye.png" width="32" height="32"/>
         <image name="ic_eye_fill.png" width="32" height="32"/>
