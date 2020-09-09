@@ -25,7 +25,12 @@ DisplayView.shared.hide() // for hiding
 
 # Contributors 
 
-Savana, Kalpesh
+Savana, [Kalpesh](https://twitter.com/kalpeshtalkar)
+
+
+# Icons 
+
+All icons used are from [icons8](http://icons8.com) 
 
 
 # License 
