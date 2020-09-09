@@ -13,6 +13,12 @@ For Installing PixelClear, you need cocoapods
 
 For Displaying view in a controller you need to 
 
+```
+Add this permission in your Info.plist file
+Privacy - Photo Library Usage Description (this is need to display photo album of Device)
+```
+
+
 ``` 
 import PixelClear
 
