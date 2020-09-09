@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F2484D7325091769002B1F78 /* ic_border.png in Resources */ = {isa = PBXBuildFile; fileRef = F2484D7225091769002B1F78 /* ic_border.png */; };
+		F2484D7525091794002B1F78 /* ic_no_border.png in Resources */ = {isa = PBXBuildFile; fileRef = F2484D7425091794002B1F78 /* ic_no_border.png */; };
 		F24969A324DFE13B000B4584 /* PixelClear.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F249699924DFE13B000B4584 /* PixelClear.framework */; };
 		F24969A824DFE13B000B4584 /* PixelClearTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24969A724DFE13B000B4584 /* PixelClearTests.swift */; };
 		F24969AA24DFE13B000B4584 /* PixelClear.h in Headers */ = {isa = PBXBuildFile; fileRef = F249699C24DFE13B000B4584 /* PixelClear.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -16,8 +18,6 @@
 		F24969C624DFE155000B4584 /* ImageSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24969C224DFE155000B4584 /* ImageSelection.swift */; };
 		F285E76924FE737E00C50832 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F285E76824FE737E00C50832 /* UIView+Extensions.swift */; };
 		F285E77524FF277700C50832 /* ic_double_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = F285E77424FF277700C50832 /* ic_double_arrow.png */; };
-		F2C4C74624E6E16000946237 /* ic_no_border.png in Resources */ = {isa = PBXBuildFile; fileRef = F2C4C74524E6E16000946237 /* ic_no_border.png */; };
-		F2C4C74924E6E18F00946237 /* ic_border.png in Resources */ = {isa = PBXBuildFile; fileRef = F2C4C74824E6E18F00946237 /* ic_border.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +31,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F2484D7225091769002B1F78 /* ic_border.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_border.png; sourceTree = "<group>"; };
+		F2484D7425091794002B1F78 /* ic_no_border.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_no_border.png; sourceTree = "<group>"; };
 		F249699924DFE13B000B4584 /* PixelClear.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PixelClear.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F249699C24DFE13B000B4584 /* PixelClear.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PixelClear.h; sourceTree = "<group>"; };
 		F249699D24DFE13B000B4584 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -43,8 +45,6 @@
 		F24969C224DFE155000B4584 /* ImageSelection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageSelection.swift; sourceTree = "<group>"; };
 		F285E76824FE737E00C50832 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		F285E77424FF277700C50832 /* ic_double_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_double_arrow.png; sourceTree = "<group>"; };
-		F2C4C74524E6E16000946237 /* ic_no_border.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_no_border.png; sourceTree = "<group>"; };
-		F2C4C74824E6E18F00946237 /* ic_border.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_border.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,9 +135,9 @@
 		F2C4C74724E6E18200946237 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				F2484D7225091769002B1F78 /* ic_border.png */,
+				F2484D7425091794002B1F78 /* ic_no_border.png */,
 				F285E77424FF277700C50832 /* ic_double_arrow.png */,
-				F2C4C74824E6E18F00946237 /* ic_border.png */,
-				F2C4C74524E6E16000946237 /* ic_no_border.png */,
 			);
 			path = images;
 			sourceTree = "<group>";
@@ -236,8 +236,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F24969C324DFE155000B4584 /* Holder.storyboard in Resources */,
-				F2C4C74624E6E16000946237 /* ic_no_border.png in Resources */,
-				F2C4C74924E6E18F00946237 /* ic_border.png in Resources */,
+				F2484D7325091769002B1F78 /* ic_border.png in Resources */,
+				F2484D7525091794002B1F78 /* ic_no_border.png in Resources */,
 				F285E77524FF277700C50832 /* ic_double_arrow.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

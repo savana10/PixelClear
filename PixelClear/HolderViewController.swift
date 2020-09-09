@@ -219,6 +219,7 @@ public class DisplayView: NSObject {
             DispatchQueue.main.asyncAfter(deadline: .now()+1.0) {
                 guard let primaryWindow = UIApplication.shared.windows.first else { return }
                 primaryWindow.translatesAutoresizingMaskIntoConstraints = true
+                self.mainView.view.layer.zPosition = CGFloat(INT_MAX)
                 primaryWindow.addSubview(self.mainView.view)
                 (self.mainView as! HolderViewController).reloadDisplay()
             }
