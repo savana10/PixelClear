@@ -57,6 +57,10 @@ class HolderViewController: UIViewController {
                 self.rightHandleView.isHidden = false
             }
         }
+        imagePicker.displayHandler  = { displaying in
+            self.view.layer.zPosition = CGFloat(!displaying ? INT_MAX : 0)
+        }
+        
         rightHandleView.pc_makeViewRounded(circular: true)
         leftHandleView.pc_makeViewRounded(circular: true)
     }

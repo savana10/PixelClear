@@ -18,13 +18,7 @@ class ImageSelection: NSObject {
 
     @IBOutlet var selectedImageView: UIImageView!
     @IBOutlet var displayController: UIViewController!
-//    @IBInspectable var addInteractionOnImageView: Bool = false {
-//        didSet{
-//            if addInteractionOnImageView && selectedImageView != nil {
-//                addTapGesture()
-//            }
-//        }
-//    }
+
     @IBInspectable var showImageOptions: Bool = false
     
     private lazy var imagePicker: UIImagePickerController = {
@@ -34,6 +28,8 @@ class ImageSelection: NSObject {
     
     @objc var imageSelected: BooleanCompletionHandler?
     @objc var cancelSelected: BooleanCompletionHandler?
+    @objc var displayHandler: BooleanCompletionHandler?
+    
     fileprivate var imageHasBeenSelected = false
     
     private func addTapGesture() {
@@ -52,6 +48,9 @@ class ImageSelection: NSObject {
     }
     
     @IBAction @objc func displayImagePickerOptions() {
+        if let handler = displayHandler{
+            handler(true)
+        }
          self.imagePickerOptions(false)
     }
     
@@ -83,6 +82,7 @@ extension ImageSelection: UIImagePickerControllerDelegate, UINavigationControlle
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: true, completion: nil)
         DispatchQueue.main.async {
+            self.dismissedPicker()
             let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
             if let im = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.originalImage)] as? UIImage {
                 self.selectedImageView.image = im
@@ -106,10 +106,15 @@ extension ImageSelection: UIImagePickerControllerDelegate, UINavigationControlle
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         imageSelected?(imageHasBeenSelected)
+        dismissedPicker()
         picker.dismiss(animated: true, completion: nil)
     }
     
-    
+    fileprivate func dismissedPicker() {
+        if let handler = displayHandler{
+            handler(true)
+        }
+    }
 }
 
 // Helper function inserted by Swift 4.2 migrator.
