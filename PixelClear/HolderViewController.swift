@@ -209,6 +209,8 @@ class HolderViewController: UIViewController {
 
 public class DisplayView: NSObject {
     
+    @objc public static let shared = DisplayView()
+    
     private lazy var mainView: UIViewController  = {
         return UIStoryboard(name: "Holder", bundle: Bundle(for: type(of: self))).instantiateViewController(withIdentifier: "holderController")
     }()
