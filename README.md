@@ -1,11 +1,10 @@
 # PixelClear
 
-PixelClear is a framework which allows you to see how near screen design developed is near to the one designer has provided. Its a pretty simple easy to use tool which 
-is displayed in Simulator or in TestFlight version when called.
+PixelClear is a framework which allows you to see how near screen design developed is near to the one designer has provided. Its a pretty simple easy to use tool which is displayed in Simulator or in TestFlight version when called.
 
 # Installation
 
-For Installing Pixel Clear, you need cocoapods 
+For Installing PixelClear, you need cocoapods 
 
 `pod PixelClear` 
 
