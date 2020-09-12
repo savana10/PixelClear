@@ -99,17 +99,18 @@
                                         <constraints>
                                             <constraint firstAttribute="width" constant="60" id="fSl-tW-oza"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" image="ic_reset.png"/>
+                                        <state key="normal" image="ic_close.png"/>
                                         <connections>
-                                            <action selector="refreshToDefault:" destination="Np8-C0-OTn" eventType="touchUpInside" id="z8O-RS-a9N"/>
+                                            <action selector="closeWholeView:" destination="Np8-C0-OTn" eventType="touchUpInside" id="V1D-CE-Pnz"/>
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="wVZ-jK-IMg">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="60"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cmh-gy-fQu">
-                                                <rect key="frame" x="0.0" y="0.0" width="83.5" height="60"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="67" height="60"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" image="ic_camera.png"/>
                                                 <connections>
@@ -117,7 +118,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wwR-ti-3Kc">
-                                                <rect key="frame" x="83.5" y="0.0" width="83.5" height="60"/>
+                                                <rect key="frame" x="67" y="0.0" width="66.5" height="60"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" image="ic_eye.png"/>
                                                 <connections>
@@ -125,7 +126,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vjF-4y-mTO">
-                                                <rect key="frame" x="167" y="0.0" width="83.5" height="60"/>
+                                                <rect key="frame" x="133.5" y="0.0" width="67" height="60"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" image="ic_eye_fill.png"/>
                                                 <connections>
@@ -133,12 +134,19 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zik-S2-vmM">
-                                                <rect key="frame" x="250.5" y="0.0" width="83.5" height="60"/>
+                                                <rect key="frame" x="200.5" y="0.0" width="66.5" height="60"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" image="ic_no_border.png"/>
                                                 <state key="selected" image="ic_border.png"/>
                                                 <connections>
                                                     <action selector="updateBorder:" destination="Np8-C0-OTn" eventType="touchUpInside" id="mrB-mV-3RB"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="axk-mG-pPf">
+                                                <rect key="frame" x="267" y="0.0" width="67" height="60"/>
+                                                <state key="normal" image="ic_reset.png"/>
+                                                <connections>
+                                                    <action selector="refreshToDefault:" destination="Np8-C0-OTn" eventType="touchUpInside" id="n84-Yf-5wB"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -226,6 +234,7 @@
     <resources>
         <image name="ic_border.png" width="32" height="32"/>
         <image name="ic_camera.png" width="32" height="32"/>
+        <image name="ic_close.png" width="24" height="24"/>
         <image name="ic_double_arrow.png" width="80" height="80"/>
         <image name="ic_eye.png" width="32" height="32"/>
         <image name="ic_eye_fill.png" width="32" height="32"/>

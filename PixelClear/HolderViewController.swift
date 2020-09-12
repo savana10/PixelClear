@@ -114,11 +114,16 @@ class HolderViewController: UIViewController {
     }
     
     @IBAction func updateBorder(_ sender: UIButton) {
-        sender.isSelected = !sender.isSelected
-        displayBorder = !displayBorder
-        applyBorderToImage(sender.isSelected)
+        if (holderState != .regularDisplay) {
+            sender.isSelected = !sender.isSelected
+            displayBorder = !displayBorder
+            applyBorderToImage(sender.isSelected)
+        }
     }
     
+    @IBAction func closeWholeView(_ sender: Any) {
+        DisplayView.shared.hide()
+    }
     
     @IBAction func panFromLeftToRight(_ gesture: UIPanGestureRecognizer) {
         let translation = gesture.translation(in: view)
