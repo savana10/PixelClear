@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -34,35 +34,60 @@
                                     <constraint firstItem="mem-YC-n4R" firstAttribute="top" secondItem="mNR-bP-GRD" secondAttribute="top" id="h5x-Oy-dQF"/>
                                 </constraints>
                             </view>
-                            <visualEffectView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9jX-wb-Cy7">
+                            <visualEffectView hidden="YES" opaque="NO" alpha="0.25" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9jX-wb-Cy7">
                                 <rect key="frame" x="-40" y="328" width="80" height="80"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="LrT-uw-D61">
                                     <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_double_arrow.png" translatesAutoresizingMaskIntoConstraints="NO" id="tMz-Ug-6hH">
+                                            <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </imageView>
+                                    </subviews>
                                     <gestureRecognizers/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="tMz-Ug-6hH" secondAttribute="bottom" id="4qD-q7-0ri"/>
+                                        <constraint firstItem="tMz-Ug-6hH" firstAttribute="leading" secondItem="LrT-uw-D61" secondAttribute="leading" id="BqB-3m-xRC"/>
+                                        <constraint firstItem="tMz-Ug-6hH" firstAttribute="top" secondItem="LrT-uw-D61" secondAttribute="top" id="bIp-r3-xyB"/>
+                                        <constraint firstAttribute="trailing" secondItem="tMz-Ug-6hH" secondAttribute="trailing" id="xy6-qk-a9D"/>
+                                    </constraints>
                                     <connections>
                                         <outletCollection property="gestureRecognizers" destination="h1M-hk-Kz9" appends="YES" id="RhF-4f-t0Z"/>
                                     </connections>
                                 </view>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="8t0-Ys-qUW"/>
-                                    <constraint firstAttribute="height" constant="80" id="lFa-oN-aAJ"/>
+                                    <constraint firstAttribute="width" secondItem="9jX-wb-Cy7" secondAttribute="height" multiplier="1:1" id="9dj-fL-Ysx"/>
                                 </constraints>
                                 <blurEffect style="regular"/>
                             </visualEffectView>
-                            <visualEffectView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="COc-x8-b48">
+                            <visualEffectView hidden="YES" opaque="NO" alpha="0.25" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="COc-x8-b48">
                                 <rect key="frame" x="374" y="408" width="80" height="80"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="TNw-Tw-dgJ">
                                     <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_double_arrow.png" translatesAutoresizingMaskIntoConstraints="NO" id="DHq-aa-QM8">
+                                            <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </imageView>
+                                    </subviews>
                                     <gestureRecognizers/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="DHq-aa-QM8" secondAttribute="bottom" id="Jyu-Wc-To5"/>
+                                        <constraint firstAttribute="trailing" secondItem="DHq-aa-QM8" secondAttribute="trailing" id="Vr8-nh-lG8"/>
+                                        <constraint firstItem="DHq-aa-QM8" firstAttribute="top" secondItem="TNw-Tw-dgJ" secondAttribute="top" id="Zjb-PW-zsp"/>
+                                        <constraint firstItem="DHq-aa-QM8" firstAttribute="leading" secondItem="TNw-Tw-dgJ" secondAttribute="leading" id="mk4-Iy-6hH"/>
+                                    </constraints>
                                     <connections>
                                         <outletCollection property="gestureRecognizers" destination="l0f-0j-KJA" appends="YES" id="gis-ft-O87"/>
                                     </connections>
                                 </view>
                                 <constraints>
+                                    <constraint firstAttribute="width" secondItem="COc-x8-b48" secondAttribute="height" multiplier="1:1" id="U4I-LM-zXD"/>
                                     <constraint firstAttribute="width" constant="80" id="XXk-8K-hxk"/>
-                                    <constraint firstAttribute="height" constant="80" id="zKw-cJ-tSB"/>
                                 </constraints>
                                 <blurEffect style="regular"/>
                             </visualEffectView>
@@ -74,46 +99,54 @@
                                         <constraints>
                                             <constraint firstAttribute="width" constant="60" id="fSl-tW-oza"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" image="arrow.clockwise" catalog="system"/>
+                                        <state key="normal" image="ic_close.png"/>
                                         <connections>
-                                            <action selector="refreshToDefault:" destination="Np8-C0-OTn" eventType="touchUpInside" id="z8O-RS-a9N"/>
+                                            <action selector="closeWholeView:" destination="Np8-C0-OTn" eventType="touchUpInside" id="V1D-CE-Pnz"/>
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="wVZ-jK-IMg">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="60"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cmh-gy-fQu">
-                                                <rect key="frame" x="0.0" y="0.0" width="83.5" height="60"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="67" height="60"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" image="camera.fill" catalog="system"/>
+                                                <state key="normal" image="ic_camera.png"/>
                                                 <connections>
                                                     <action selector="displayImagePickerOptions" destination="cri-D5-VV5" eventType="touchUpInside" id="lNy-0F-ma4"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wwR-ti-3Kc">
-                                                <rect key="frame" x="83.5" y="0.0" width="83.5" height="60"/>
+                                                <rect key="frame" x="67" y="0.0" width="66.5" height="60"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" image="eye" catalog="system"/>
+                                                <state key="normal" image="ic_eye.png"/>
                                                 <connections>
                                                     <action selector="brightnessUpdate:" destination="Np8-C0-OTn" eventType="touchUpInside" id="1Kc-n4-BHP"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vjF-4y-mTO">
-                                                <rect key="frame" x="167" y="0.0" width="83.5" height="60"/>
+                                                <rect key="frame" x="133.5" y="0.0" width="67" height="60"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" image="eye.fill" catalog="system"/>
+                                                <state key="normal" image="ic_eye_fill.png"/>
                                                 <connections>
                                                     <action selector="brightnessUpdate:" destination="Np8-C0-OTn" eventType="touchUpInside" id="ent-qF-hZ7"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zik-S2-vmM">
-                                                <rect key="frame" x="250.5" y="0.0" width="83.5" height="60"/>
+                                                <rect key="frame" x="200.5" y="0.0" width="66.5" height="60"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" image="ic_no_border.png"/>
                                                 <state key="selected" image="ic_border.png"/>
                                                 <connections>
                                                     <action selector="updateBorder:" destination="Np8-C0-OTn" eventType="touchUpInside" id="mrB-mV-3RB"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="axk-mG-pPf">
+                                                <rect key="frame" x="267" y="0.0" width="67" height="60"/>
+                                                <state key="normal" image="ic_reset.png"/>
+                                                <connections>
+                                                    <action selector="refreshToDefault:" destination="Np8-C0-OTn" eventType="touchUpInside" id="n84-Yf-5wB"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -130,6 +163,9 @@
                                     <constraint firstItem="wVZ-jK-IMg" firstAttribute="leading" secondItem="TQj-R6-iDn" secondAttribute="leading" id="Tpv-lh-i90"/>
                                     <constraint firstAttribute="bottom" secondItem="wVZ-jK-IMg" secondAttribute="bottom" id="p2V-iN-hr3"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="ggC-2k-V78" appends="YES" id="Zgf-s2-YGT"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -160,7 +196,9 @@
                         <outlet property="imageHolderView" destination="mNR-bP-GRD" id="1ZV-Sb-zUI"/>
                         <outlet property="imagePicker" destination="cri-D5-VV5" id="fPG-Pe-OMk"/>
                         <outlet property="leftHandleView" destination="9jX-wb-Cy7" id="Jbt-b9-dMy"/>
+                        <outlet property="leftHandleWidth" destination="8t0-Ys-qUW" id="iCY-tO-rP8"/>
                         <outlet property="rightHandleView" destination="COc-x8-b48" id="aa7-0C-Rlf"/>
+                        <outlet property="rightHandleWidth" destination="XXk-8K-hxk" id="3sj-Zh-g0L"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qKp-qC-3Ey" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -169,6 +207,11 @@
                         <outlet property="selectedImageView" destination="mem-YC-n4R" id="IGq-uN-aT0"/>
                     </connections>
                 </customObject>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="ggC-2k-V78">
+                    <connections>
+                        <action selector="moveBottomView:" destination="Np8-C0-OTn" id="OOc-af-h0F"/>
+                    </connections>
+                </panGestureRecognizer>
                 <panGestureRecognizer minimumNumberOfTouches="1" id="h1M-hk-Kz9">
                     <connections>
                         <action selector="panFromLeftToRight:" destination="Np8-C0-OTn" id="7En-KQ-l9m"/>
@@ -189,11 +232,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="arrow.clockwise" catalog="system" width="115" height="128"/>
-        <image name="camera.fill" catalog="system" width="128" height="96"/>
-        <image name="eye" catalog="system" width="128" height="81"/>
-        <image name="eye.fill" catalog="system" width="128" height="78"/>
         <image name="ic_border.png" width="32" height="32"/>
+        <image name="ic_camera.png" width="32" height="32"/>
+        <image name="ic_close.png" width="24" height="24"/>
+        <image name="ic_double_arrow.png" width="80" height="80"/>
+        <image name="ic_eye.png" width="32" height="32"/>
+        <image name="ic_eye_fill.png" width="32" height="32"/>
         <image name="ic_no_border.png" width="32" height="32"/>
+        <image name="ic_reset.png" width="32" height="32"/>
     </resources>
 </document>
