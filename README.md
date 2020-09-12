@@ -6,7 +6,7 @@ PixelClear is a framework which allows you to see how near screen design develop
 
 For Installing PixelClear, you need cocoapods 
 
-`pod PixelClear` 
+`pod 'PixelClear'` 
 
 
 # Usage 
