@@ -29,6 +29,16 @@ DisplayView.shared.display() // for displaying
 DisplayView.shared.hide() // for hiding
 ```
 
+# Demo Video 
+
+Application : [TimeZ](https://apps.apple.com/app/timez-the-world-clock/id1523532990)
+
+![Video](/Demo/demo_video.mov "Demo Video") 
+![Image 1](/Demo/demo_image_1.png "Screenshot 1")
+![Image 2](/Demo/demo_image_2.png "Screenshot 2")
+![Image 3](/Demo/demo_image_3.png "Screenshot 3")
+![Image 4](/Demo/demo_image_4.png "Screenshot 4")
+
 
 # Contributing to PixelClear
 We love your input and want to make contributing to this project as easy and transparent as possible, whether it's:
