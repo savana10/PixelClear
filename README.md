@@ -29,15 +29,23 @@ DisplayView.shared.display() // for displaying
 DisplayView.shared.hide() // for hiding
 ```
 
-# Demo Video 
 
-Application : [TimeZ](https://apps.apple.com/app/timez-the-world-clock/id1523532990)
+# PixelClear in Action!
 
-![Video](/Demo/demo_video.mov "Demo Video") 
-![Image 1](/Demo/demo_image_1.png "Screenshot 1")
-![Image 2](/Demo/demo_image_2.png "Screenshot 2")
-![Image 3](/Demo/demo_image_3.png "Screenshot 3")
-![Image 4](/Demo/demo_image_4.png "Screenshot 4")
+[TimeZ - The World Clock](https://apps.apple.com/app/timez-the-world-clock/id1523532990) has started using PixelClear to build it's pixel perfect UI
+
+<img src="/Demo/demo_video.gif" data-canonical-src="/Demo/demo_video.gif" alt="Demo Video" width="300px" height="auto"/>
+
+**Screenshots**
+
+<table>
+  <tr>
+    <td valign="top"><img src="/Demo/demo_image_1.png" data-canonical-src="/Demo/demo_image_1.png" alt="Screenshot 1"/></td>
+    <td valign="top"><img src="/Demo/demo_image_2.png" data-canonical-src="/Demo/demo_image_2.png" alt="Screenshot 2"/></td>
+    <td valign="top"><img src="/Demo/demo_image_3.png" data-canonical-src="/Demo/demo_image_3.png" alt="Screenshot 3"/></td>
+    <td valign="top"><img src="/Demo/demo_image_4.png" data-canonical-src="/Demo/demo_image_4.png" alt="Screenshot 4"/></td>
+  </tr>
+</table>
 
 
 # Contributing to PixelClear
